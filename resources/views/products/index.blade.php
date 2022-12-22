@@ -9,12 +9,12 @@
 <div tabindex="0" class="focus:outline-none">
             <!-- Remove py-8 -->
             <div class="mx-auto container py-8">
-                <div class="flex flex-wrap items-center lg:justify-between justify-center">
+                <div class="grid grid-cols-4 grid-gap-4">
                     <!-- Card 1 avec une boucle des produits -->
                     @foreach($products as $product)
                     <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
                         <div>
-                            <img alt="person capturing an image" src="https://cdn.tuk.dev/assets/templates/classified/Bitmap (1).png" tabindex="0" class="focus:outline-none w-full h-44" />
+                            <img alt="person capturing an image" src="{{ $product->image }}" tabindex="0" class="focus:outline-none w-full h-44" />
                         </div>
                         <div class="bg-white">
                             <div class="flex items-center justify-between px-4 pt-4">
@@ -25,26 +25,17 @@
                                     </svg>
                                 </div>
                                 <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
-                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700">Featured</p>
+                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700"> {{ $product->price }} </p>
                                 </div>
                             </div>
                             <div class="p-4">
                                 <div class="flex items-center">
-                                    <h2 tabindex="0" class="focus:outline-none text-lg font-semibold">iphone XS</h2>
-                                    <p tabindex="0" class="focus:outline-none text-xs text-gray-600 pl-5">4 days ago</p>
+                                    <h2 tabindex="0" class="focus:outline-none text-lg font-semibold">{{ $product->name }}</h2>
                                 </div>
-                                <p tabindex="0" class="focus:outline-none text-xs text-gray-600 mt-2">The Apple iPhone XS is available in 3 colors with 64GB memory. Shoot amazing videos</p>
-                                <div class="flex mt-4">
-                                    <div>
-                                        <p tabindex="0" class="focus:outline-none text-xs text-gray-600 px-2 bg-gray-200 py-1">12 months warranty</p>
-                                    </div>
-                                    <div class="pl-2">
-                                        <p tabindex="0" class="focus:outline-none text-xs text-gray-600 px-2 bg-gray-200 py-1">Complete box</p>
-                                    </div>
-                                </div>
+                                <p tabindex="0" class="focus:outline-none text-xs text-gray-600 mt-2">{{ $product->description }}</p>
+                              
                                 <div class="flex items-center justify-between py-4">
-                                    <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">Bay Area, San Francisco</h2>
-                                    <h3 tabindex="0" class="focus:outline-none text-indigo-700 text-xl font-semibold"></h3>
+                                   <button class="bg-blue-500 text-white p-2" >Ajouter au panier</button>
                                 </div>
                             </div>
                         </div>
